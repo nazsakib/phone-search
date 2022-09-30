@@ -9,3 +9,6 @@ section {
 button {
     transition: 0.3s;
 }
+#phone-detail {
+    margin: 10px 0;
+}
