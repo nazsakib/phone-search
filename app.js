@@ -30,7 +30,7 @@ const displaySearchResults = datas => {
             <img class="pb-2 ml-4" src="${data.image}" alt="" />
             <h2 class="font-bold capitalize">${data.phone_name}</h2>
             <p>${data.brand}</p>
-            <button onclick="loadDetails(${data.slug})"
+            <button onclick="loadDetails('${data.slug}')"
                 class="py-2 px-12 rounded-md text-white bg-teal-700 hover:bg-teal-900 hover:text-white mt-4">
                 Details
             </button>
@@ -46,19 +46,24 @@ const loadDetails = id => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => showPhoneDetails(data));
+        .then(data => showPhoneDetails(data.data));
 };
 
 const showPhoneDetails = phone => {
-    console.log(phone);
+    // console.log(phone);
     const phoneDetail = document.getElementById("phone-detail");
     const div = document.createElement("div");
+    phoneDetail.textContent = "";
     div.innerHTML = `
         <div
-            class="drop-shadow-2xl border border-amber-700 p-8 rounded-md text-center bg-white">
-            <img class="pb-2 ml-4" src="${phone.image}" alt="" />
+            class="drop-shadow-2xl border border-amber-700 p-8 rounded-md text-center bg-white font-bold">
+            <img class="pb-2 mx-auto" src="${phone.image}" alt="" />
             <h2 class="font-bold capitalize">${phone.name}</h2>
-            <p>${phone.others}</p>
+            <p>${phone.releaseDate}</p>
+            <p>${phone.mainFeatures.storage}</p>
+            <p>${phone.others.WLAN}</p>
+            <p>${phone.mainFeatures.memory}</p>
+            <p>${phone.mainFeatures.sensors}</p>
         </div>
         `;
     phoneDetail.appendChild(div);
