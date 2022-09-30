@@ -7,14 +7,23 @@ const searchArea = () => {
     const searchText = searchInput.value;
     // console.log(searchText);
 
-    // clearing the input value after search
-    searchInput.value = "";
-
     // api taking
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displaySearchResults(data.data));
+    if (searchText === "") {
+        // using sweet alert, a replacement for js default alert system
+        swal({
+            title: "Error",
+            text: "Kindly enter the phone name!",
+            icon: "warning",
+            buttons: ["Cancel", "Search Again"],
+        });
+    } else {
+        // clearing the input value after search
+        searchInput.value = "";
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displaySearchResults(data.data));
+    }
 };
 
 // display phone area
@@ -52,19 +61,31 @@ const loadDetails = id => {
 const showPhoneDetails = phone => {
     // console.log(phone);
     const phoneDetail = document.getElementById("phone-detail");
-    const div = document.createElement("div");
-    phoneDetail.textContent = "";
-    div.innerHTML = `
-        <div
-            class="drop-shadow-2xl border border-amber-700 p-8 rounded-md text-center bg-white font-bold">
-            <img class="pb-2 mx-auto" src="${phone.image}" alt="" />
-            <h2 class="font-bold capitalize">${phone.name}</h2>
-            <p>${phone.releaseDate}</p>
-            <p>${phone.mainFeatures.storage}</p>
-            <p>${phone.others.WLAN}</p>
-            <p>${phone.mainFeatures.memory}</p>
-            <p>${phone.mainFeatures.sensors}</p>
-        </div>
-        `;
-    phoneDetail.appendChild(div);
+    // sweet alert
+    swal({
+        title: `${phone.name}`,
+        text: `${phone.releaseDate}
+               ${phone.mainFeatures.storage}, 
+               ${phone.others.WLAN},
+               ${phone.mainFeatures.memory},
+               ${phone.mainFeatures.sensors}`,
+        icon: "info",
+        dangerMode: true,
+        buttons: "Ok",
+    });
+    // const div = document.createElement("div");
+    // phoneDetail.textContent = "";
+    // div.innerHTML = `
+    //     <div
+    //         class="drop-shadow-2xl border border-amber-700 p-8 rounded-md text-center bg-white font-bold">
+    //         <img class="pb-2 mx-auto" src="${phone.image}" alt="" />
+    //         <h2 class="font-bold capitalize">${phone.name}</h2>
+    //         <p>${phone.releaseDate}</p>
+    //         <p>${phone.mainFeatures.storage}</p>
+    //         <p>${phone.others.WLAN}</p>
+    //         <p>${phone.mainFeatures.memory}</p>
+    //         <p>${phone.mainFeatures.sensors}</p>
+    //     </div>
+    //     `;
+    // phoneDetail.appendChild(div);
 };
