@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Phone Search Api</title>
+
+        <!-- link -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section class="bg-teal-200">
+            <div class="container w-3/5 m-auto pb-16">
+                <!-- search area -->
+                <div
+                    id="search-area"
+                    class="search__area m-auto text-center pb-8">
+                    <h1
+                        class="pt-12 pb-4 text-xl font-bold tracking-wide uppercase">
+                        Search For Your Desired Product!
+                    </h1>
+                    <input
+                        id="search-input"
+                        type="text"
+                        class="border border-amber-500 outline-0 pr-24 pl-2 py-2 rounded-md" />
+                    <button
+                        onclick="searchArea()"
+                        class="border border-amber-500 hover:bg-teal-700 hover:text-white px-12 py-2 bg-white rounded-md">
+                        Search
+                    </button>
+                </div>
+                <!-- phone detail -->
+                <div class="phone-detail"></div>
+                <!-- display area -->
+                <div
+                    id="display-area"
+                    class="display__area m-auto grid gap-4 grid-cols-4">
+                    <!-- <div
+                        class="card shadow-2xl border border-amber-700 p-8 rounded-md text-center bg-teal-400">
+                        <img class="pb-2" src="images/iphone.jpeg" alt="" />
+                        <h2 class="font-bold uppercase">Phone Name</h2>
+                        <p>Brand</p>
+                        <button
+                            class="py-2 px-12 rounded-md bg-white hover:bg-teal-800 hover:text-white mt-4">
+                            Detail
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <!-- script -->
+        <script src="app.js"></script>
+    </body>
+</html>
