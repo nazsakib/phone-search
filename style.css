@@ -3,12 +3,22 @@
     margin: 0;
     padding: 0;
 }
-section {
+section .nav {
+    position: absolute;
+    top: 0;
+}
+.search {
     min-height: 100vh;
+    background-image: url(images/iphone.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
 }
 button {
     transition: 0.3s;
 }
 #phone-detail {
-    margin: 10px 0;
+    margin: 20px 0;
 }
