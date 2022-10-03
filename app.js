@@ -1,15 +1,21 @@
 // console.log("hello");
 
+// spinner
+const toggleSpinner = displaySpinner => {
+    document.getElementById("spinner").style.display = displaySpinner;
+};
 // search area
 
 const searchArea = () => {
     const searchInput = document.getElementById("search-input");
+    toggleSpinner("block");
     const searchText = searchInput.value;
     // console.log(searchText);
-
     // api taking
     if (searchText === "") {
         // using sweet alert, a replacement for js default alert system
+
+        toggleSpinner("none");
         swal({
             title: "Error",
             text: "Kindly enter the phone name!",
@@ -31,7 +37,10 @@ const searchArea = () => {
 const displaySearchResults = datas => {
     const searchResult = document.getElementById("display-area");
     searchResult.textContent = "";
-    datas.forEach(data => {
+
+    toggleSpinner("none");
+
+    datas?.forEach(data => {
         const div = document.createElement("div");
         div.innerHTML = `
         <div
@@ -61,16 +70,30 @@ const loadDetails = id => {
 const showPhoneDetails = phone => {
     // console.log(phone);
     const phoneDetail = document.getElementById("phone-detail");
+
     // sweet alert
     swal({
-        title: `${phone.name}`,
-        text: `${phone.releaseDate}
-               ${phone.mainFeatures.storage}, 
-               ${phone.others.WLAN},
-               ${phone.mainFeatures.memory},
-               ${phone.mainFeatures.sensors}`,
+        title: `${phone.name ? phone.name : "Info not available!"}`,
+        text: `${phone.releaseDate ? phone.releaseDate : "Info not available!"}
+               ${
+                   phone.mainFeatures.storage
+                       ? phone.mainFeatures.storage
+                       : "Info not available!"
+               }, 
+               ${phone.others.WLAN ? phone.others.WLAN : "Info not available!"},
+               ${
+                   phone.mainFeatures.memory
+                       ? phone.mainFeatures.memory
+                       : "Info not available!"
+               },
+               ${
+                   phone.mainFeatures.sensors
+                       ? phone.mainFeatures.sensors
+                       : "Info not available!"
+               },
+                ${phone.others.USB ? phone.others.USB : "Info not available!"}`,
         icon: "info",
-        dangerMode: true,
+        dangerMode: false,
         buttons: "Ok",
     });
     // const div = document.createElement("div");
