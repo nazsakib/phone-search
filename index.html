@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <section>
+        <section class="h-screen">
             <nav
                 class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
                 <div
@@ -75,6 +75,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="container w-3/5 m-auto pb-4">
                     <!-- search area -->
                     <div
@@ -87,19 +88,20 @@
                         <input
                             id="search-input"
                             type="text"
-                            class="border border-amber-500 outline-0 pr-24 pl-2 py-2 rounded-md" />
+                            class="border border-amber-500 outline-0 pr-24 pl-2 py-2 rounded-md md:pr-8" />
                         <button
                             onclick="searchArea()"
                             class="border border-amber-500 hover:bg-teal-400 px-12 py-2 bg-white rounded-md">
                             Search
                         </button>
                     </div>
+                    <div id="spinner"></div>
                     <!-- phone detail -->
-                    <div id="phone-detail tex-center"></div>
+                    <div id="phone-detail tex-center capitalize"></div>
                     <!-- display area -->
                     <div
                         id="display-area"
-                        class="display__area m-auto grid gap-4 grid-cols-4"></div>
+                        class="display__area m-auto grid gap-4 grid-cols-4 capitalize"></div>
                 </div>
             </nav>
             <section class="search"></section>
