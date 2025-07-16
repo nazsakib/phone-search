@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h1 class="text-xl font-bold text-white">PhoneShow</h1>
         </a>
         <nav class="space-x-6 text-sm">
-          <a href="index.html" class="hover:text-yellow-400">Home</a>
+          <a href="/phone-search/" class="hover:text-yellow-400">Home</a>
           <a href="about.html" class="hover:text-yellow-400">About</a>
           <a href="mailto:sakibsnaz@gmail.com" class="hover:text-yellow-400">Contact</a>
         </nav>
