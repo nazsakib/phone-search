@@ -1,7 +1,6 @@
-// js/layout.js
 document.addEventListener("DOMContentLoaded", () => {
     const header = `
-    <header class="bg-gray-900 text-white shadow">
+    <header class="sticky top-0 z-50 bg-gray-900 text-white shadow">
       <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <a href="https://nazsakib.github.io/phone-search" class="flex items-center gap-2">
           <img src="images/phone.png" alt="PhoneShow" class="h-8" />

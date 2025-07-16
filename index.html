@@ -11,51 +11,41 @@
         <link rel="stylesheet" href="style.css" />
     </head>
 
-    <body class="bg-gray-50 text-gray-800 font-sans h-screen flex flex-col">
+    <body class="min-h-screen flex flex-col bg-gray-50 text-gray-800">
         <!-- Header -->
         <div id="header"></div>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto">
-            <section class="max-w-5xl mx-auto py-10 px-4">
-                <!-- search area -->
-                <div class="text-center mb-10">
-                    <h1 class="text-2xl font-bold mb-4 uppercase text-gray-900">
-                        Find a Phone You Want to Have!
-                    </h1>
-                    <div
-                        class="flex flex-col sm:flex-row justify-center items-center gap-4"
+        <main class="flex-grow max-w-5xl mx-auto py-10 px-4 w-full">
+            <section class="text-center mb-10">
+                <h1 class="text-2xl font-bold mb-4 uppercase text-gray-900">
+                    Find a Phone You Want to Have!
+                </h1>
+                <div
+                    class="flex flex-col sm:flex-row justify-center items-center gap-4"
+                >
+                    <input
+                        id="search-input"
+                        type="text"
+                        placeholder="Search phone model..."
+                        class="border border-amber-500 px-4 py-2 rounded-md w-full sm:w-80"
+                    />
+                    <button
+                        onclick="searchArea()"
+                        class="bg-white border border-amber-500 hover:bg-teal-400 px-8 py-2 rounded-md"
                     >
-                        <input
-                            id="search-input"
-                            type="text"
-                            placeholder="Search phone model..."
-                            class="border border-amber-500 px-4 py-2 rounded-md w-full sm:w-80"
-                        />
-                        <button
-                            onclick="searchArea()"
-                            class="bg-white border border-amber-500 hover:bg-teal-400 px-8 py-2 rounded-md"
-                        >
-                            Search
-                        </button>
-                    </div>
+                        Search
+                    </button>
                 </div>
-
-                <!-- Spinner -->
-                <div id="spinner"></div>
-
-                <!-- Phone Detail -->
-                <div
-                    id="phone-detail"
-                    class="text-center mb-6 capitalize"
-                ></div>
-
-                <!-- Display Area -->
-                <div
-                    id="display-area"
-                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 capitalize"
-                ></div>
             </section>
+
+            <div id="spinner"></div>
+            <div id="phone-detail" class="text-center mb-6 capitalize"></div>
+
+            <div
+                id="display-area"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 capitalize"
+            ></div>
         </main>
 
         <!-- Footer -->
