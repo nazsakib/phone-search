@@ -6,52 +6,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>PhoneShow - Home</title>
 
-        <!-- Tailwind CSS CDN -->
+        <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="style.css" />
     </head>
 
-    <body class="bg-gray-50 font-sans text-gray-800">
-        <!-- Header from layout.js -->
+    <body class="bg-gray-50 text-gray-800 font-sans h-screen flex flex-col">
+        <!-- Header -->
         <div id="header"></div>
 
-        <!-- Main Section -->
-        <main class="w-11/12 md:w-3/4 mx-auto pt-12 pb-8">
-            <!-- search area -->
-            <section class="text-center mb-10">
-                <h1 class="text-2xl font-bold text-gray-800 mb-4 uppercase">
-                    Find a Phone You Want to Have!
-                </h1>
-                <div class="flex flex-col md:flex-row justify-center gap-4">
-                    <input
-                        id="search-input"
-                        type="text"
-                        placeholder="Search phone model..."
-                        class="border border-amber-500 outline-none px-4 py-2 rounded-md w-full md:w-80"
-                    />
-                    <button
-                        onclick="searchArea()"
-                        class="bg-white border border-amber-500 hover:bg-teal-400 px-8 py-2 rounded-md"
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <section class="max-w-5xl mx-auto py-10 px-4">
+                <!-- search area -->
+                <div class="text-center mb-10">
+                    <h1 class="text-2xl font-bold mb-4 uppercase text-gray-900">
+                        Find a Phone You Want to Have!
+                    </h1>
+                    <div
+                        class="flex flex-col sm:flex-row justify-center items-center gap-4"
                     >
-                        Search
-                    </button>
+                        <input
+                            id="search-input"
+                            type="text"
+                            placeholder="Search phone model..."
+                            class="border border-amber-500 px-4 py-2 rounded-md w-full sm:w-80"
+                        />
+                        <button
+                            onclick="searchArea()"
+                            class="bg-white border border-amber-500 hover:bg-teal-400 px-8 py-2 rounded-md"
+                        >
+                            Search
+                        </button>
+                    </div>
                 </div>
+
+                <!-- Spinner -->
+                <div id="spinner"></div>
+
+                <!-- Phone Detail -->
+                <div
+                    id="phone-detail"
+                    class="text-center mb-6 capitalize"
+                ></div>
+
+                <!-- Display Area -->
+                <div
+                    id="display-area"
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 capitalize"
+                ></div>
             </section>
-
-            <!-- spinner -->
-            <div id="spinner"></div>
-
-            <!-- phone detail -->
-            <div id="phone-detail" class="text-center capitalize mb-6"></div>
-
-            <!-- display area -->
-            <div
-                id="display-area"
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 capitalize"
-            ></div>
         </main>
 
-        <!-- Footer from layout.js -->
+        <!-- Footer -->
         <div id="footer"></div>
 
         <!-- Scripts -->
